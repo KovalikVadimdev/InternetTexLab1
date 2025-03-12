@@ -22,7 +22,7 @@ try {
             INNER JOIN lesson ON lesson_groups.FID_Lesson2 = lesson.ID_Lesson 
             INNER JOIN lesson_teacher ON lesson.ID_Lesson = lesson_teacher.FID_Lesson1 
             INNER JOIN teacher ON lesson_teacher.FID_Teacher = teacher.ID_Teacher 
-            WHERE teacher.name = ?";
+            WHERE teacher.name = :teacher_name";
 
     $prepare = $pdo->prepare($sql);
     $teacher_name = $_GET["teacher_name"];
